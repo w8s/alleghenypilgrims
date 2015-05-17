@@ -13,3 +13,8 @@ The conference site for Allegheny Pilgrims.
 ## Dependencies
 
 You must install [Vagrant](https://www.vagrantup.com) and its dependencies.
+
+
+## Credits
+
+Special thanks to [Torchbox](https://github.com/torchbox/vagrant-django-template) for the Django vagrant template. Fantastic resource.
