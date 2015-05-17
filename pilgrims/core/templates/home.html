@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<style>
+
+#content {
+    background: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.bg {
+  background: url('http://placebeyonce.com/1400-400') no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 400px; /*same height as jumbotron */
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.jumbotron {
+  margin-bottom: 0px;
+  height: 400px;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+  background:transparent;
+}
+
+</style>
+{% endblock %}
+
+{% block jumbotron %}
+<div class="bg"></div>
+<div class="jumbotron">
+    <div class="container">
+            <h1 class="text-right">Allegheny Pilgrims</h1>
+            <p class="text-right">April 29 - May 1, 2016</p>
+            <p class="text-right"><a href="https://goo.gl/maps/LtwDk">Crestfield Camp & Conference Center</a></p>
+            <p class="text-right">Slippery Rock, PA</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<h1>Featured Speakers</h1>
+<div class="col-md-6">
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object img-rounded" src="http://placebeyonce.com/250-300" alt="Fatimah Salleh">
+            </a>
+        </div>
+        <div class="media-body">
+            <h2 class="media-heading">Fatimah Salleh</h2>
+            <p>Graduated from Utah State with a bachelor's in history. Served a mission in Campinas, Brazil. Earned a PhD in Mass Communication at University of North Carolina at Chapel Hill. Currently, earning a Masters of Divinity at Duke University. Mother of four and wife to one self-proclaimed Viking. The daughter of an African-American father and a Puerto-Rican and Malaysian mother.</p>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object img-rounded" src="http://placehold.it/250x300" alt="Something Else">
+            </a>
+        </div>
+        <div class="media-body">
+            <h2 class="media-heading">Speaker Two</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci sit amet urna egestas sollicitudin finibus nec nisi. In hac habitasse platea dictumst. Mauris luctus, quam nec vulputate volutpat, eros risus auctor turpis, quis maximus arcu tortor at ante. Aenean lorem risus, finibus sed vulputate id, volutpat et est. Nam sem neque, porta vitae mauris sit amet, blandit laoreet lectus. Sed et lacinia erat. Phasellus semper maximus est.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script>
+var jumboHeight = $('.jumbotron').outerHeight();
+function parallax(){
+    var scrolled = $(window).scrollTop();
+    $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+}
+
+$(window).scroll(function(e){
+    parallax();
+});
+</script>
+{% endblock %}

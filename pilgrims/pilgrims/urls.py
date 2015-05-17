@@ -5,7 +5,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'pilgrims.views.home', name='home'),
+    url(r'^$', 'core.views.home', name='home'),
     # url(r'^pilgrims/', include('pilgrims.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
