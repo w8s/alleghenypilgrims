@@ -1,3 +1,8 @@
+/pilgrims/.vagrant
+/pilgrims/static
+*.pyc
+/pilgrims/pilgrims/settings/local.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
