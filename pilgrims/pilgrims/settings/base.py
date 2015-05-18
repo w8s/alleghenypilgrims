@@ -133,8 +133,12 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
+    'localflavor',
+
     'core',
 )
+
+ORGANIZATION = "Allegheny Pilgrims"
 
 EMAIL_SUBJECT_PREFIX = '[pilgrims] '
 
