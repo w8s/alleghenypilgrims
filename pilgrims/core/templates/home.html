@@ -49,33 +49,24 @@
 {% endblock %}
 
 {% block content %}
+{% if conference.speaker_set %}
 <h1>Featured Speakers</h1>
+{% for speaker in conference.speaker_set.all %}
 <div class="col-md-6">
     <div class="media">
         <div class="media-left">
             <a href="#">
-                <img class="media-object img-rounded" src="http://placebeyonce.com/250-300" alt="Fatimah Salleh">
+                <img class="media-object img-rounded" src="http://placebeyonce.com/250-300" alt="{{speaker.full_name}}">
             </a>
         </div>
         <div class="media-body">
-            <h2 class="media-heading">Fatimah Salleh</h2>
-            <p>Graduated from Utah State with a bachelor's in history. Served a mission in Campinas, Brazil. Earned a PhD in Mass Communication at University of North Carolina at Chapel Hill. Currently, earning a Masters of Divinity at Duke University. Mother of four and wife to one self-proclaimed Viking. The daughter of an African-American father and a Puerto-Rican and Malaysian mother.</p>
+            <h2 class="media-heading">{{ speaker.full_name }}</h2>
+            <p>{{speaker.profile}}</p>
         </div>
     </div>
 </div>
-<div class="col-md-6">
-    <div class="media">
-        <div class="media-left">
-            <a href="#">
-                <img class="media-object img-rounded" src="http://placehold.it/250x300" alt="Something Else">
-            </a>
-        </div>
-        <div class="media-body">
-            <h2 class="media-heading">Speaker Two</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci sit amet urna egestas sollicitudin finibus nec nisi. In hac habitasse platea dictumst. Mauris luctus, quam nec vulputate volutpat, eros risus auctor turpis, quis maximus arcu tortor at ante. Aenean lorem risus, finibus sed vulputate id, volutpat et est. Nam sem neque, porta vitae mauris sit amet, blandit laoreet lectus. Sed et lacinia erat. Phasellus semper maximus est.</p>
-        </div>
-    </div>
-</div>
+{% endfor %}
+{% endif %}
 {% endblock %}
 
 

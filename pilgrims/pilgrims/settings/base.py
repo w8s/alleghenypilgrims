@@ -133,12 +133,18 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
-    'localflavor',
-
     'core',
+
+    'localflavor',
+    # 'newsletter',
+    'tinymce',
+
+
 )
 
 ORGANIZATION = "Allegheny Pilgrims"
+
+NEWSLETTER_RICHTEXT_WIDGET = "tinymce.widgets.TinyMCE"
 
 EMAIL_SUBJECT_PREFIX = '[pilgrims] '
 
