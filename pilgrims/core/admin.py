@@ -2,4 +2,4 @@ from django.contrib import admin
 from core.models import *
 
 admin.site.register(Conference)
-# admin.site.register(Organization)
+admin.site.register(Speaker)

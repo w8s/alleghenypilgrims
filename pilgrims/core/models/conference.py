@@ -28,11 +28,3 @@ class Conference(models.Model):
 
     def __str__(self):
         return "%s - Theme: %s" % (self.date_start.strftime("%Y"), self.theme)
-
-
-# class Organization(models.Model):
-
-#     name = models.CharField(max_length=150)
-
-#     def __str__(self):
-#         return self.name
