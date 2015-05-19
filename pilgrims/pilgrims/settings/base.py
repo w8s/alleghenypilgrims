@@ -135,9 +135,12 @@ INSTALLED_APPS = (
 
     'core',
 
+    # Third Party
     'localflavor',
-    # 'newsletter',
     'tinymce',
+    'django_extensions',
+    'sorl.thumbnail',
+    'newsletter',
 
 
 )
