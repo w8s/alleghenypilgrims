@@ -43,7 +43,7 @@
             {% if conference.map_link %}</a>{% endif %}
             </p>{% endif %}
             {% if conference.location_city and conference.location_state %}<p class="text-right">{{ conference.location_city}}, {{ conference.location_state }}</p>{% endif %}
-            <a href="{% url 'newsletter_subscribe_request' newsletter_slug='allegheny-pilgrims' %}" class="btn btn-success pull-right">Keep Me Posted</a>
+            <!-- <a href="{% url 'newsletter_subscribe_request' newsletter_slug='allegheny-pilgrims' %}" class="btn btn-success pull-right">Keep Me Posted</a> -->
     </div>
 </div>
 {% endblock %}
