@@ -122,6 +122,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     'compressor',
     'debug_toolbar',
@@ -138,7 +139,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'sorl.thumbnail',
     'newsletter',
-
+    'registration',
 
 )
 
@@ -147,6 +148,8 @@ ORGANIZATION = "Allegheny Pilgrims"
 NEWSLETTER_RICHTEXT_WIDGET = "tinymce.widgets.TinyMCE"
 
 EMAIL_SUBJECT_PREFIX = '[pilgrims] '
+
+ACCOUNT_ACTIVATION_DAYS = 7
 
 INTERNAL_IPS = ('127.0.0.1', '10.0.2.2')
 

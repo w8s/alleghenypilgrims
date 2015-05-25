@@ -1,0 +1,50 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block registration %}
+
+<div class="page-header">
+    <h1>Sign Up</h1>
+</div>
+
+<div class="col-md-3">
+    {% if form.errors %}
+    <p class="text-danger">Please correct the errors below:</p>
+    {% if form.non_field_errors %}
+    <div class="bg-danger text-danger" style="padding:3px 5px;margin:5px 0;">
+        {% for err in form.non_field_errors %}
+        <p>{{err}}</p>
+        {% endfor %}
+    </div>
+    {% endif%}
+    {% endif %}
+
+
+
+
+  <form method="post" action="">{% csrf_token %}
+    <div class="form-group">
+        <label for="{{ form.username.id_for_label }}">Username</label>
+        {% if form.username.errors %}<div class="bg-danger text-danger" style="padding:3px 5px;margin:5px 0;">{{ form.username.errors|join:", " }}</div>{% endif %}
+        <input type="text" class="form-control" id="{{ form.username.id_for_label }}" name="{{ form.username.name }}" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">Email</label>
+        {% if form.email.errors %}<div class="bg-danger text-danger" style="padding:3px 5px;margin:5px 0;">{{ form.email.errors|join:", " }}</div>{% endif %}
+        <input type="email" class="form-control" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" placeholder="Enter Email">
+    </div>
+    <div class="form-group">
+        <label for="{{ form.password1.id_for_label }}">Password</label>
+        {% if form.password1.errors %}<div class="bg-danger text-danger" style="padding:3px 5px;margin:5px 0;">{{ form.password1.errors|join:", " }}</div>{% endif %}
+        <input type="password" class="form-control" id="{{ form.password1.id_for_label }}" name="{{ form.password1.name }}" placeholder="Enter Password">
+    </div>
+    <div class="form-group">
+        <label for="{{ form.password2.id_for_label }}">Password (Conifrm)</label>
+        {% if form.password2.errors %}<div class="bg-danger text-danger" style="padding:3px 5px;margin:5px 0;">{{ form.password2.errors|join:", " }}</div>{% endif %}
+        <input type="password" class="form-control" id="{{ form.password2.id_for_label }}" name="{{ form.password2.name }}" placeholder="Confirm Password">
+    </div>
+    <button type="submit" class="btn btn-success">Sign Up</button>
+  </form>
+</div>
+{% endblock %}

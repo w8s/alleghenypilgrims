@@ -1,0 +1,1 @@
+Activate your Allgheny Pilgrims account - you have {{ expiration_days }} days!

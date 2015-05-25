@@ -1,0 +1,37 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Log in{% endblock %}
+
+{% block registration %}
+
+<div class="page-header">
+    <h1>Log In</h1>
+</div>
+
+<div class="col-md-3">
+    {% if form.errors %}
+    <p class="text-danger">Please correct the errors below:</p>
+    {% if form.non_field_errors %}
+    <div class="bg-danger text-danger" style="padding:3px 5px;margin:5px 0;">
+        {% for err in form.non_field_errors %}
+        <p>{{err}}</p>
+        {% endfor %}
+    </div>
+    {% endif%}
+    {% endif %}
+
+    <form method="post" action="?next={{ next|default:"/" }}">{% csrf_token %}
+    <div class="form-group">
+        <label for="{{ form.username.id_for_label }}">Username</label>
+        {% if form.username.errors %}<div class="bg-danger text-danger" style="padding:3px 5px;margin:5px 0;">{{ form.username.errors|join:", " }}</div>{% endif %}
+        <input type="text" class="form-control" id="{{ form.username.id_for_label }}" name="{{ form.username.name }}" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+        <label for="{{ form.password.id_for_label }}">Password</label>
+        {% if form.password.errors %}<div class="bg-danger text-danger" style="padding:3px 5px;margin:5px 0;">{{ form.password.errors|join:", " }}</div>{% endif %}
+        <input type="password" class="form-control" id="{{ form.password.id_for_label }}" name="{{ form.password.name }}" placeholder="Enter password">
+    </div>
+    <span><a class="btn btn-default" href="{% url 'registration_register' %}" role="button">Sign Up</a> or </span><button type="submit" class="btn btn-success">Log In</button>
+    </form>
+</div>
+{% endblock %}
